@@ -1,0 +1,1264 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08080A">
+<meta name="format-detection" content="telephone=no">
+
+<!-- ══ SEO ═══════════════════════════════════════════════════════════════ -->
+<title>Prime Veículos · Compra e Venda de Carros em Rolim de Moura - RO</title>
+<meta name="description" content="Prime Veículos — referência em compra, venda e troca de veículos no centro de Rondônia. Av. 25 de Agosto, 3750 - Centenário, Rolim de Moura - RO.">
+<meta name="keywords" content="carros Rolim de Moura, veículos Rondônia, comprar carro RO, vender carro Rolim de Moura, Prime Veículos">
+<meta name="author" content="Prime Veículos">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://primeveiculos.com.br/">
+<link rel="icon" href="assets/img/logo-prime.png">
+<link rel="apple-touch-icon" href="assets/img/logo-prime.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Prime Veículos">
+<meta property="og:title" content="Prime Veículos · Rolim de Moura - RO">
+<meta property="og:description" content="Compra, venda e troca de veículos com procedência. Referência na região central de Rondônia.">
+<meta property="og:image" content="assets/img/loja-aerea.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ══ Performance ═══════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/img/hero-poster.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ══ Tailwind ══════════════════════════════════════════════════════════ -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:     '#08080A',
+          surface: '#0D0E11',
+          carbon:  '#15161A',
+          prime:   '#E11B22',
+          primeLt: '#FF2E36',
+          mute:    '#8B8B92',
+        },
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        },
+        letterSpacing: { widest2: '.28em' },
+        maxWidth: { shell: '1440px' },
+      }
+    }
+  }
+</script>
+
+<!-- ══ CSS ═══════════════════════════════════════════════════════════════ -->
+<style>
+  :root { --ease: cubic-bezier(.16,1,.3,1); --ease-out: cubic-bezier(.22,1,.36,1); }
+
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body { background:#08080A; overflow-x:hidden; }
+  ::selection { background:#E11B22; color:#fff; }
+
+  ::-webkit-scrollbar { width:10px; }
+  ::-webkit-scrollbar-track { background:#08080A; }
+  ::-webkit-scrollbar-thumb { background:#26272C; border-radius:99px; }
+  ::-webkit-scrollbar-thumb:hover { background:#3A3B42; }
+
+  :focus-visible { outline:2px solid #E11B22; outline-offset:3px; }
+
+  .display { letter-spacing:-.035em; line-height:.95; }
+
+  /* ── Grão sutil sobre toda a página ── */
+  .grain {
+    position:fixed; inset:0; z-index:9998; pointer-events:none; opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ── Preloader ── */
+  #preloader { transition:opacity .8s var(--ease), visibility .8s; }
+  #preloader.done { opacity:0; visibility:hidden; }
+
+  /* ── Reveal ── */
+  [data-reveal] {
+    opacity:0; transform:translateY(28px);
+    transition:opacity 1s var(--ease), transform 1s var(--ease);
+    transition-delay:var(--d,0ms);
+  }
+  [data-reveal].is-in { opacity:1; transform:none; }
+
+  /* ── Reveal por palavra (títulos) ── */
+  .word { display:inline-block; overflow:hidden; vertical-align:bottom; padding-bottom:.08em; margin-bottom:-.08em; }
+  .word-i { display:inline-block; transform:translateY(115%); transition:transform 1.05s var(--ease); transition-delay:var(--wd,0ms); }
+  [data-split].is-in .word-i { transform:none; }
+
+  /* ── Sublinhado hover ── */
+  .rule-grow::after {
+    content:''; position:absolute; left:0; bottom:-6px; height:1px; width:0;
+    background:#E11B22; transition:width .6s var(--ease);
+  }
+  .rule-grow:hover::after, .rule-grow[data-active]::after { width:100%; }
+  .rule-grow[data-active] { color:#fff; }
+
+  /* ── Marquee ── */
+  .marquee { display:flex; width:max-content; animation:slide 46s linear infinite; }
+  @keyframes slide { to { transform:translateX(-50%); } }
+  .marquee-mask {
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  }
+
+  /* ── Indicador de scroll ── */
+  @keyframes drip { 0%{transform:scaleY(0);transform-origin:top}
+                    45%{transform:scaleY(1);transform-origin:top}
+                    55%{transform:scaleY(1);transform-origin:bottom}
+                    100%{transform:scaleY(0);transform-origin:bottom} }
+  .drip { animation:drip 2.4s var(--ease) infinite; }
+
+  .video-shell { background:radial-gradient(120% 80% at 70% 10%,#1c1d22 0%,#08080A 60%); }
+
+  /* ── Faixa de fotos (rolagem contínua) ── */
+  /* O JS duplica o conjunto de fotos; a animação anda exatamente metade do
+     trilho e reinicia — como as duas metades são iguais, o corte é invisível. */
+  @keyframes desliza { to { transform:translate3d(-50%,0,0); } }
+
+  #faixaTrilho {
+    animation:desliza var(--dur,42s) linear infinite;
+    will-change:transform;
+  }
+  #faixa:hover #faixaTrilho { animation-play-state:paused; }
+
+  /* Esmaece as pontas, dando a impressão de que a fila continua fora da tela */
+  .faixa-mask {
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);
+            mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #faixaTrilho { animation:none; }
+  }
+
+  /* ── Lightbox ── */
+  #lightbox { transition:opacity .5s var(--ease), visibility .5s; }
+  #lightbox[hidden] { display:flex !important; opacity:0; visibility:hidden; pointer-events:none; }
+
+  /* ── Inputs ── */
+  .campo {
+    width:100%; background:transparent; border:0; border-bottom:1px solid rgba(255,255,255,.14);
+    padding:14px 0; font-size:15px; color:#fff; transition:border-color .5s var(--ease);
+  }
+  .campo::placeholder { color:rgba(255,255,255,.28); }
+  .campo:focus { outline:none; border-color:#E11B22; }
+  select.campo option { background:#15161A; color:#fff; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+    [data-reveal] { opacity:1; transform:none; }
+    .word-i { transform:none !important; }
+  }
+</style>
+
+<!-- Rede de segurança: sem JavaScript, o conteúdo aparece normalmente
+     (nada de seção invisível caso o script não carregue). -->
+<noscript>
+  <style>
+    #preloader { display:none !important; }
+    [data-reveal] { opacity:1 !important; transform:none !important; }
+    .word-i { transform:none !important; }
+  </style>
+</noscript>
+</head>
+
+<body class="bg-ink font-sans text-white/90 antialiased">
+
+<a href="#top" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:bg-prime focus:px-4 focus:py-2 focus:text-sm focus:font-semibold">Pular para o conteúdo</a>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     PRELOADER
+════════════════════════════════════════════════════════════════════════ -->
+<div id="preloader" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-ink">
+  <img src="assets/img/logo-prime.png" alt="" class="h-20 w-auto sm:h-24">
+  <div class="mt-10 h-px w-48 overflow-hidden bg-white/10 sm:w-64">
+    <div id="preBar" class="h-full w-0 bg-prime"></div>
+  </div>
+  <div class="mt-4 flex w-48 items-center justify-between font-mono text-[10px] uppercase tracking-[.2em] text-white/35 sm:w-64">
+    <span>Rolim de Moura · RO</span>
+    <span id="preNum">0%</span>
+  </div>
+</div>
+
+<!-- Barra de progresso da leitura -->
+<div class="fixed inset-x-0 top-0 z-[60] h-[2px] bg-transparent" aria-hidden="true">
+  <div id="progress" class="h-full w-0 bg-prime"></div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════════════════════════════ -->
+<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-500">
+  <div id="navInner" class="mx-auto flex max-w-shell items-center justify-between px-6 py-5 transition-all duration-500 lg:px-12">
+
+    <a href="#top" class="flex items-center gap-4" aria-label="Prime Veículos — início">
+      <img src="assets/img/logo-prime.png" alt="Prime Veículos" class="h-14 w-auto sm:h-16">
+      <span class="hidden h-6 w-px bg-white/15 sm:block"></span>
+      <span class="hidden text-[9px] font-semibold uppercase leading-relaxed tracking-widest2 text-mute sm:block">Rolim de Moura<br>Rondônia</span>
+    </a>
+
+    <nav class="hidden items-center gap-9 lg:flex" aria-label="Principal">
+      <a href="#sobre"     data-nav class="rule-grow relative text-[13px] font-medium text-white/60 transition-colors hover:text-white">A Casa</a>
+      <a href="#regiao"    data-nav class="rule-grow relative text-[13px] font-medium text-white/60 transition-colors hover:text-white">Localização</a>
+      <a href="#avaliacao" data-nav class="rule-grow relative text-[13px] font-medium text-white/60 transition-colors hover:text-white">Avaliar meu carro</a>
+      <a href="#contato"   data-nav class="rule-grow relative text-[13px] font-medium text-white/60 transition-colors hover:text-white">Contato</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a data-wa href="#" target="_blank" rel="noopener"
+         class="hidden items-center gap-2 border border-white/15 bg-white/[.03] px-5 py-3 text-[12px] font-semibold uppercase tracking-[.14em] backdrop-blur-md transition-all duration-500 hover:border-prime hover:bg-prime sm:inline-flex">
+        <svg class="h-[15px] w-[15px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.58-.35M12.05 21.8h-.02c-1.75 0-3.47-.47-4.97-1.36l-.36-.21-3.7.97.99-3.61-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.42 4.42-9.83 9.85-9.83 2.63 0 5.1 1.03 6.96 2.89a9.76 9.76 0 0 1 2.88 6.95c0 5.42-4.42 9.83-9.9 9.83M20.5 3.49A11.72 11.72 0 0 0 12.05 0C5.55 0 .26 5.28.26 11.76c0 2.07.54 4.09 1.57 5.87L.16 24l6.53-1.71a11.8 11.8 0 0 0 5.36 1.36h.01c6.5 0 11.79-5.28 11.79-11.76 0-3.14-1.23-6.1-3.45-8.32"/></svg>
+        WhatsApp
+      </a>
+
+      <button id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel"
+              class="relative z-50 grid h-11 w-11 place-items-center border border-white/15 transition-colors hover:border-white/35 lg:hidden">
+        <span class="flex w-5 flex-col gap-[5px]">
+          <span data-bar class="block h-px w-full bg-white transition-all duration-300"></span>
+          <span data-bar class="block h-px w-full bg-white transition-all duration-300"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<div id="menuPanel" class="pointer-events-none fixed inset-0 z-40 translate-y-[-100%] bg-ink/95 backdrop-blur-xl transition-transform duration-700 lg:hidden" style="transition-timing-function:var(--ease)">
+  <nav class="flex h-full flex-col justify-center gap-0 px-8" aria-label="Menu mobile">
+    <a href="#sobre"     data-mlink class="display border-b border-white/10 py-4 text-3xl font-extrabold sm:text-4xl">A Casa</a>
+    <a href="#regiao"    data-mlink class="display border-b border-white/10 py-4 text-3xl font-extrabold sm:text-4xl">Localização</a>
+    <a href="#avaliacao" data-mlink class="display border-b border-white/10 py-4 text-3xl font-extrabold sm:text-4xl">Avaliar meu carro</a>
+    <a href="#contato"   data-mlink class="display border-b border-white/10 py-4 text-3xl font-extrabold sm:text-4xl">Contato</a>
+    <a data-wa data-mlink href="#" target="_blank" rel="noopener"
+       class="mt-8 inline-flex items-center justify-center gap-2 bg-prime px-6 py-4 text-[12px] font-bold uppercase tracking-[.16em] text-white">
+      Falar no WhatsApp
+    </a>
+  </nav>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     1 · HERO
+════════════════════════════════════════════════════════════════════════ -->
+<section id="top" class="video-shell relative h-screen min-h-[660px] w-full overflow-hidden">
+
+  <!-- ▼ VÍDEO DE FUNDO ▼
+       Arquivo: assets/video/hero.mp4 (18s, 1,9 MB, sem áudio, comprimido)
+       O original sem cortes fica apenas na máquina local (não versionado).
+       Para trocar: substitua o hero.mp4 e gere um novo poster do 1º quadro.
+       Obs.: o vídeo atual é vertical (720x1280) — no desktop ele aparece
+       cortado nas laterais. Para nitidez máxima em telas grandes, o ideal
+       é gravar um vídeo deitado (16:9). -->
+  <video id="heroVideo"
+    class="absolute inset-0 h-[115%] w-full object-cover opacity-60 will-change-transform"
+    autoplay muted loop playsinline preload="auto"
+    poster="assets/img/hero-poster.jpg">
+    <source src="assets/video/hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/70"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/25 to-transparent"></div>
+  <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-ink to-transparent"></div>
+
+  <div class="relative z-10 mx-auto flex h-full max-w-shell flex-col justify-end px-6 pb-28 pt-32 lg:px-12 lg:pb-24">
+
+    <p data-reveal class="mb-6 flex items-center gap-4 text-[10px] font-semibold uppercase tracking-widest2 text-prime">
+      <span class="h-px w-10 bg-prime"></span>
+      Av. 25 de Agosto · Rolim de Moura — RO
+    </p>
+
+    <h1 data-split class="display max-w-4xl text-[13vw] font-extrabold sm:text-[9vw] lg:text-[6.5rem]">
+      O veículo ideal,
+      <span class="font-light italic text-white/55">com o</span>
+      <span class="text-prime">histórico</span>
+      <span class="font-light italic text-white/55">que você pode confiar.</span>
+    </h1>
+
+    <p data-reveal style="--d:400ms" class="mt-8 max-w-xl text-[15px] leading-relaxed text-white/65 lg:text-base">
+      Compra, venda e troca com procedência verificada, documentação em dia e
+      negociação de frente. A confiança que a região central de Rondônia já conhece
+      pelo nome: <span class="font-semibold text-white">Prime Veículos</span>.
+    </p>
+
+    <div data-reveal style="--d:520ms" class="mt-11 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+      <a data-wa href="#" target="_blank" rel="noopener"
+         class="group inline-flex items-center justify-center gap-3 bg-prime px-8 py-5 text-[12px] font-bold uppercase tracking-[.16em] text-white transition-all duration-500 hover:bg-primeLt">
+        <svg class="h-[17px] w-[17px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.58-.35M12.05 21.8h-.02c-1.75 0-3.47-.47-4.97-1.36l-.36-.21-3.7.97.99-3.61-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.42 4.42-9.83 9.85-9.83 2.63 0 5.1 1.03 6.96 2.89a9.76 9.76 0 0 1 2.88 6.95c0 5.42-4.42 9.83-9.9 9.83M20.5 3.49A11.72 11.72 0 0 0 12.05 0C5.55 0 .26 5.28.26 11.76c0 2.07.54 4.09 1.57 5.87L.16 24l6.53-1.71a11.8 11.8 0 0 0 5.36 1.36h.01c6.5 0 11.79-5.28 11.79-11.76 0-3.14-1.23-6.1-3.45-8.32"/></svg>
+        Chamar no WhatsApp
+        <span class="transition-transform duration-500 group-hover:translate-x-1">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute inset-x-0 bottom-0 z-10 border-t border-white/10">
+    <div class="mx-auto flex max-w-shell items-center justify-between px-6 py-5 lg:px-12">
+      <div class="flex items-center gap-6 text-[10px] font-medium uppercase tracking-[.2em] text-white/45 sm:gap-10">
+        <span class="hidden sm:inline">Compra · Venda · Troca</span>
+        <span class="hidden h-3 w-px bg-white/15 sm:block"></span>
+        <span>(69) 99302-0404</span>
+        <span class="hidden h-3 w-px bg-white/15 md:block"></span>
+        <span class="hidden md:inline" id="statusPillTop">—</span>
+      </div>
+      <div class="flex items-center gap-3 text-[10px] uppercase tracking-[.2em] text-white/35">
+        <span class="hidden sm:inline">Role</span>
+        <span class="block h-8 w-px bg-white/20"><span class="drip block h-full w-full bg-prime"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     2 · A CASA
+════════════════════════════════════════════════════════════════════════ -->
+<section id="sobre" class="relative border-b border-white/[.07] py-28 lg:py-40">
+  <div class="mx-auto grid max-w-shell gap-14 px-6 lg:grid-cols-12 lg:gap-20 lg:px-12">
+
+    <div class="lg:col-span-4">
+      <div class="lg:sticky lg:top-32">
+        <p data-reveal class="mb-8 flex items-center gap-4 text-[10px] font-semibold uppercase tracking-widest2 text-prime">
+          <span class="h-px w-8 bg-prime"></span> 01 — A Casa
+        </p>
+        <h2 data-split class="display text-4xl font-extrabold sm:text-5xl">
+          Uma loja construída
+          <span class="font-light italic text-white/55">na confiança.</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 lg:col-start-6">
+      <p data-reveal class="text-lg font-light leading-relaxed text-white/80 lg:text-[22px] lg:leading-[1.65]">
+        A nossa maior garantia não está no papel, está na nossa história. Em uma
+        região onde as pessoas se valorizam pelo nome, cada veículo entregue carrega
+        o selo de transparência da nossa família para a sua. Onde o aperto de mão
+        ainda é o contrato mais seguro.
+      </p>
+      <p data-reveal style="--d:100ms" class="mt-8 leading-relaxed text-white/50">
+        Cada veículo que entra no pátio da Prime passa por checagem de procedência,
+        histórico e documentação antes de ir para a vitrine. O que você vê na loja é
+        exatamente o que você leva para casa — sem letra miúda e sem surpresa no
+        despachante.
+      </p>
+
+      <div class="mt-16 divide-y divide-white/[.08] border-y border-white/[.08]">
+        <div data-reveal class="grid grid-cols-[auto_1fr] gap-6 py-8 transition-colors duration-500 hover:bg-white/[.02] sm:grid-cols-[80px_1fr] sm:gap-10">
+          <span class="font-mono text-[11px] font-semibold uppercase tracking-[.2em] text-prime">01</span>
+          <div>
+            <h3 class="text-xl font-bold tracking-tight">Procedência verificada</h3>
+            <p class="mt-2 max-w-lg text-sm leading-relaxed text-white/45">Consulta de histórico, chassi e restrições antes de qualquer negociação. Você compra sabendo de onde veio.</p>
+          </div>
+        </div>
+        <div data-reveal style="--d:80ms" class="grid grid-cols-[auto_1fr] gap-6 py-8 transition-colors duration-500 hover:bg-white/[.02] sm:grid-cols-[80px_1fr] sm:gap-10">
+          <span class="font-mono text-[11px] font-semibold uppercase tracking-[.2em] text-prime">02</span>
+          <div>
+            <h3 class="text-xl font-bold tracking-tight">Documentação resolvida</h3>
+            <p class="mt-2 max-w-lg text-sm leading-relaxed text-white/45">Transferência, financiamento e burocracia acompanhados de perto do começo ao fim, sem você correr atrás.</p>
+          </div>
+        </div>
+        <div data-reveal style="--d:160ms" class="grid grid-cols-[auto_1fr] gap-6 py-8 transition-colors duration-500 hover:bg-white/[.02] sm:grid-cols-[80px_1fr] sm:gap-10">
+          <span class="font-mono text-[11px] font-semibold uppercase tracking-[.2em] text-prime">03</span>
+          <div>
+            <h3 class="text-xl font-bold tracking-tight">Avaliamos o seu na hora</h3>
+            <p class="mt-2 max-w-lg text-sm leading-relaxed text-white/45">Troca com avaliação justa e proposta imediata. Traga o seu veículo e saia com outro no mesmo dia.</p>
+          </div>
+        </div>
+      </div>
+
+      <a data-wa href="#" target="_blank" rel="noopener"
+         class="group mt-12 inline-flex items-center gap-4 text-[12px] font-bold uppercase tracking-[.18em] text-prime">
+        Fale com um consultor
+        <span class="h-px w-10 bg-prime transition-all duration-500 group-hover:w-16"></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Galeria — faixa contínua (o JS duplica as fotos para o loop não ter emenda) -->
+  <div class="mt-24">
+    <div id="faixa" data-reveal class="faixa-mask relative overflow-hidden"
+         role="region" aria-label="Fotos da loja">
+      <!-- Sem "gap": o espaçamento vem da margem de cada foto, senão a conta do
+           -50% sobra meio vão e o loop dá um salto visível. -->
+      <div id="faixaTrilho" class="flex w-max">
+
+        <figure class="foto group relative mr-4 aspect-[4/3] w-[62vw] shrink-0 cursor-zoom-in overflow-hidden border border-white/[.08] sm:mr-5 sm:w-[42vw] lg:w-[30vw]"
+                data-lightbox="assets/img/loja-aerea.jpg"
+                data-legenda="Prime Veículos · Av. 25 de Agosto, Rolim de Moura — RO">
+          <img src="assets/img/loja-aerea.jpg"
+               class="h-full w-full object-cover transition-transform duration-[1.4s] group-hover:scale-105"
+               style="transition-timing-function:var(--ease)"
+               alt="Vista aérea noturna da Prime Veículos, com o pátio de carros iluminado">
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/5 to-transparent"></div>
+          <figcaption class="absolute bottom-4 left-5 text-[9px] font-semibold uppercase tracking-[.18em] text-white/75">A loja · Rolim de Moura</figcaption>
+        </figure>
+
+        <figure class="foto group relative mr-4 aspect-[4/3] w-[62vw] shrink-0 cursor-zoom-in overflow-hidden border border-white/[.08] sm:mr-5 sm:w-[42vw] lg:w-[30vw]"
+                data-lightbox="assets/img/loja-fachada.jpg"
+                data-legenda="Fachada iluminada · Prime Veículos">
+          <img src="assets/img/loja-fachada.jpg"
+               class="h-full w-full object-cover transition-transform duration-[1.4s] group-hover:scale-105"
+               style="transition-timing-function:var(--ease)"
+               alt="Fachada iluminada da Prime Veículos vista da rua, à noite">
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/5 to-transparent"></div>
+          <figcaption class="absolute bottom-4 left-5 text-[9px] font-semibold uppercase tracking-[.18em] text-white/75">Fachada · Av. 25 de Agosto</figcaption>
+        </figure>
+
+        <figure class="foto group relative mr-4 aspect-[4/3] w-[62vw] shrink-0 cursor-zoom-in overflow-hidden border border-white/[.08] sm:mr-5 sm:w-[42vw] lg:w-[30vw]"
+                data-lightbox="assets/img/loja-showroom.jpg"
+                data-legenda="Showroom · Prime Veículos">
+          <img src="assets/img/loja-showroom.jpg"
+               class="h-full w-full object-cover transition-transform duration-[1.4s] group-hover:scale-105"
+               style="transition-timing-function:var(--ease)"
+               alt="Showroom da Prime Veículos com veículos expostos na vitrine">
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/5 to-transparent"></div>
+          <figcaption class="absolute bottom-4 left-5 text-[9px] font-semibold uppercase tracking-[.18em] text-white/75">Showroom · Compra, venda e troca</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     3 · LOCALIZAÇÃO
+════════════════════════════════════════════════════════════════════════ -->
+<section id="regiao" class="relative overflow-hidden border-b border-white/[.07] py-28 lg:py-40">
+
+  <div class="marquee-mask pointer-events-none absolute inset-x-0 top-16 select-none opacity-[.05]" aria-hidden="true">
+    <div class="marquee">
+      <span class="display whitespace-nowrap pr-16 text-[10vw] font-extrabold">Rolim de Moura · Rolim de Moura · </span>
+      <span class="display whitespace-nowrap pr-16 text-[10vw] font-extrabold">Rolim de Moura · Rolim de Moura · </span>
+    </div>
+  </div>
+
+  <div class="relative mx-auto max-w-shell px-6 lg:px-12">
+
+    <div class="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+      <div>
+        <p data-reveal class="mb-8 flex items-center gap-4 text-[10px] font-semibold uppercase tracking-widest2 text-prime">
+          <span class="h-px w-8 bg-prime"></span> 02 — Onde Estamos
+        </p>
+        <h2 data-split class="display max-w-2xl text-4xl font-extrabold sm:text-6xl">
+          Uma loja,
+          <span class="font-light italic text-white/55">um endereço só:</span>
+          Rolim de Moura.
+        </h2>
+      </div>
+      <p data-reveal style="--d:160ms" class="max-w-sm text-sm leading-relaxed text-white/45 lg:pb-3 lg:text-right">
+        Todo o nosso estoque fica em um único pátio, na Av. 25 de Agosto.
+        Venha ver os veículos de perto.
+      </p>
+    </div>
+
+    <div data-reveal class="mt-16 border border-prime/30 bg-gradient-to-br from-prime/[.10] to-transparent p-8 sm:p-12">
+      <div class="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+        <div>
+          <span class="text-[10px] font-semibold uppercase tracking-widest2 text-prime">Nossa Loja</span>
+          <h3 class="display mt-3 text-4xl font-extrabold sm:text-5xl">Rolim de Moura <span class="text-prime">— RO</span></h3>
+          <p class="mt-3 text-sm text-white/50">Av. 25 de Agosto, 3750 · Bairro Centenário · CEP 76940-000</p>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+25+de+Agosto,+3750+-+Centen%C3%A1rio,+Rolim+de+Moura+-+RO,+76940-000"
+           target="_blank" rel="noopener"
+           class="group inline-flex shrink-0 items-center gap-3 border border-white/20 px-6 py-4 text-[11px] font-semibold uppercase tracking-[.16em] transition-all duration-500 hover:border-prime hover:bg-prime">
+          Traçar rota
+          <span class="transition-transform duration-500 group-hover:translate-x-1">↗</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     4 · AVALIAÇÃO DO VEÍCULO
+════════════════════════════════════════════════════════════════════════ -->
+<section id="avaliacao" class="relative border-b border-white/[.07] py-28 lg:py-40">
+  <div class="mx-auto grid max-w-shell gap-14 px-6 lg:grid-cols-12 lg:gap-20 lg:px-12">
+
+    <div class="lg:col-span-5">
+      <p data-reveal class="mb-8 flex items-center gap-4 text-[10px] font-semibold uppercase tracking-widest2 text-prime">
+        <span class="h-px w-8 bg-prime"></span> 03 — Venda ou Troque
+      </p>
+      <h2 data-split class="display text-4xl font-extrabold sm:text-5xl">
+        Quanto vale
+        <span class="font-light italic text-white/55">o seu carro hoje?</span>
+      </h2>
+      <p data-reveal style="--d:200ms" class="mt-8 max-w-md leading-relaxed text-white/50">
+        Preencha os dados abaixo e o formulário monta a mensagem pronta no seu
+        WhatsApp. Um consultor responde com a avaliação e as condições de troca.
+      </p>
+
+      <div data-reveal style="--d:300ms" class="mt-10 space-y-4">
+        <div class="flex items-start gap-4">
+          <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-prime"></span>
+          <p class="text-sm leading-relaxed text-white/55"><span class="font-semibold text-white">Avaliação sem compromisso.</span> Você decide depois de ouvir a proposta.</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-prime"></span>
+          <p class="text-sm leading-relaxed text-white/55"><span class="font-semibold text-white">Aceitamos na troca.</span> Use o valor do seu como entrada de outro veículo do pátio.</p>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-prime"></span>
+          <p class="text-sm leading-relaxed text-white/55"><span class="font-semibold text-white">Sem burocracia.</span> A gente cuida da transferência e da documentação.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 lg:col-start-7">
+      <form id="formAvaliacao" data-reveal class="border border-white/[.08] bg-surface p-8 sm:p-10" novalidate>
+        <div class="grid gap-x-8 gap-y-2 sm:grid-cols-2">
+          <label class="block sm:col-span-2">
+            <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/35">Seu nome *</span>
+            <input required name="nome" type="text" class="campo" placeholder="Como podemos te chamar?">
+          </label>
+
+          <label class="block">
+            <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/35">Marca e modelo *</span>
+            <input required name="modelo" type="text" class="campo" placeholder="Ex.: Honda Civic EXL">
+          </label>
+
+          <label class="block">
+            <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/35">Ano *</span>
+            <input required name="ano" type="text" inputmode="numeric" class="campo" placeholder="Ex.: 2019/2020">
+          </label>
+
+          <label class="block">
+            <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/35">Quilometragem</span>
+            <input name="km" type="text" inputmode="numeric" class="campo" placeholder="Ex.: 72.000">
+          </label>
+
+          <label class="block">
+            <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/35">Intenção</span>
+            <select name="intencao" class="campo">
+              <option value="Vender o veículo">Vender o veículo</option>
+              <option value="Trocar por outro do pátio">Trocar por outro do pátio</option>
+              <option value="Só quero saber o valor">Só quero saber o valor</option>
+            </select>
+          </label>
+
+          <label class="block sm:col-span-2">
+            <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/35">Observações</span>
+            <input name="obs" type="text" class="campo" placeholder="Estado geral, opcionais, detalhes…">
+          </label>
+        </div>
+
+        <p id="erroForm" class="mt-6 hidden text-sm text-prime">Preencha os campos obrigatórios (*) para continuar.</p>
+
+        <button type="submit"
+          class="group mt-8 inline-flex w-full items-center justify-center gap-3 bg-prime px-8 py-5 text-[12px] font-bold uppercase tracking-[.16em] text-white transition-all duration-500 hover:bg-primeLt">
+          <svg class="h-[17px] w-[17px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.58-.35M12.05 21.8h-.02c-1.75 0-3.47-.47-4.97-1.36l-.36-.21-3.7.97.99-3.61-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.42 4.42-9.83 9.85-9.83 2.63 0 5.1 1.03 6.96 2.89a9.76 9.76 0 0 1 2.88 6.95c0 5.42-4.42 9.83-9.9 9.83M20.5 3.49A11.72 11.72 0 0 0 12.05 0C5.55 0 .26 5.28.26 11.76c0 2.07.54 4.09 1.57 5.87L.16 24l6.53-1.71a11.8 11.8 0 0 0 5.36 1.36h.01c6.5 0 11.79-5.28 11.79-11.76 0-3.14-1.23-6.1-3.45-8.32"/></svg>
+          Enviar para o WhatsApp
+          <span class="transition-transform duration-500 group-hover:translate-x-1">→</span>
+        </button>
+
+        <p class="mt-5 text-center text-[11px] leading-relaxed text-white/30">
+          Nenhum dado é armazenado neste site — as informações vão direto para a conversa no WhatsApp da loja.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     5 · CONTATO
+════════════════════════════════════════════════════════════════════════ -->
+<section id="contato" class="relative py-28 lg:py-40">
+  <div class="mx-auto max-w-shell px-6 lg:px-12">
+
+    <p data-reveal class="mb-8 flex items-center gap-4 text-[10px] font-semibold uppercase tracking-widest2 text-prime">
+      <span class="h-px w-8 bg-prime"></span> 04 — Visite a Loja
+    </p>
+    <h2 data-split class="display max-w-3xl text-4xl font-extrabold sm:text-6xl">
+      Passe aqui,
+      <span class="font-light italic text-white/55">o café está pronto.</span>
+    </h2>
+
+    <div class="mt-16 border border-white/[.08]">
+
+      <div class="bg-ink p-8 sm:p-12">
+
+        <div data-reveal>
+          <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/35">Endereço</span>
+          <p class="mt-4 text-2xl font-bold leading-snug tracking-tight">
+            Av. 25 de Agosto, 3750<br>
+            <span class="font-light text-white/60">Centenário · Rolim de Moura — RO</span>
+          </p>
+          <p class="mt-2 font-mono text-sm text-white/40">CEP 76940-000</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+25+de+Agosto,+3750+-+Centen%C3%A1rio,+Rolim+de+Moura+-+RO,+76940-000"
+             target="_blank" rel="noopener"
+             class="group mt-6 inline-flex items-center gap-3 border border-white/20 px-6 py-4 text-[11px] font-bold uppercase tracking-[.18em] transition-all duration-500 hover:border-prime hover:bg-prime">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/>
+            </svg>
+            Abrir no Google Maps
+            <span class="transition-transform duration-500 group-hover:translate-x-1">↗</span>
+          </a>
+        </div>
+
+        <div class="my-10 h-px bg-white/[.08]"></div>
+
+        <div data-reveal>
+          <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/35">Telefone · WhatsApp</span>
+          <a data-wa href="#" target="_blank" rel="noopener"
+             class="mt-4 block text-3xl font-extrabold tracking-tight transition-colors duration-500 hover:text-prime sm:text-4xl">
+            (69) 99302-0404
+          </a>
+          <p class="mt-3 text-sm text-white/40">Resposta rápida no horário comercial.</p>
+        </div>
+
+        <div class="my-10 h-px bg-white/[.08]"></div>
+
+        <div data-reveal id="horarios" class="scroll-mt-28">
+          <div class="flex items-center justify-between gap-4">
+            <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/35">Funcionamento</span>
+            <span id="statusPill" class="inline-flex items-center gap-2 border border-white/15 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[.14em] text-white/50">
+              <span id="statusDot" class="h-1.5 w-1.5 rounded-full bg-white/40"></span>
+              <span id="statusText">Verificando…</span>
+            </span>
+          </div>
+
+          <dl id="gradeHorarios" class="mt-6 divide-y divide-white/[.08] border-y border-white/[.08]"></dl>
+          <p id="proximaAbertura" class="mt-4 text-[12px] text-white/35"></p>
+        </div>
+
+        <a data-wa href="#" target="_blank" rel="noopener"
+           class="group mt-10 inline-flex w-full items-center justify-center gap-3 bg-prime px-8 py-5 text-[12px] font-bold uppercase tracking-[.16em] text-white transition-all duration-500 hover:bg-primeLt">
+          <svg class="h-[17px] w-[17px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.58-.35M12.05 21.8h-.02c-1.75 0-3.47-.47-4.97-1.36l-.36-.21-3.7.97.99-3.61-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.42 4.42-9.83 9.85-9.83 2.63 0 5.1 1.03 6.96 2.89a9.76 9.76 0 0 1 2.88 6.95c0 5.42-4.42 9.83-9.9 9.83M20.5 3.49A11.72 11.72 0 0 0 12.05 0C5.55 0 .26 5.28.26 11.76c0 2.07.54 4.09 1.57 5.87L.16 24l6.53-1.71a11.8 11.8 0 0 0 5.36 1.36h.01c6.5 0 11.79-5.28 11.79-11.76 0-3.14-1.23-6.1-3.45-8.32"/></svg>
+          Chamar agora no WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     6 · RODAPÉ
+════════════════════════════════════════════════════════════════════════ -->
+<footer class="border-t border-white/[.08] bg-surface">
+  <div class="mx-auto max-w-shell px-6 py-16 lg:px-12 lg:py-20">
+
+    <div class="grid gap-12 lg:grid-cols-12">
+
+      <div class="lg:col-span-5">
+        <img src="assets/img/logo-prime.png" alt="Prime Veículos" class="h-16 w-auto" loading="lazy">
+        <p class="mt-6 max-w-sm text-sm leading-relaxed text-white/40">
+          Compra, venda e troca de veículos com procedência.
+          Na Av. 25 de Agosto, em Rolim de Moura — RO.
+        </p>
+        <div class="mt-8 inline-flex items-center gap-3 border border-prime/30 bg-prime/[.07] px-4 py-2.5">
+          <span class="h-1.5 w-1.5 rounded-full bg-prime"></span>
+          <span class="text-[10px] font-semibold uppercase tracking-[.16em] text-white/80">Rolim de Moura · RO</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3">
+        <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/30">Navegação</span>
+        <ul class="mt-6 space-y-3.5 text-sm">
+          <li><a href="#top"       class="text-white/60 transition-colors hover:text-prime">Início</a></li>
+          <li><a href="#sobre"     class="text-white/60 transition-colors hover:text-prime">A Casa</a></li>
+          <li><a href="#regiao"    class="text-white/60 transition-colors hover:text-prime">Localização</a></li>
+          <li><a href="#avaliacao" class="text-white/60 transition-colors hover:text-prime">Avaliar meu carro</a></li>
+          <li><a href="#contato"   class="text-white/60 transition-colors hover:text-prime">Contato e horários</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-4">
+        <span class="text-[10px] font-semibold uppercase tracking-widest2 text-white/30">Contato</span>
+        <ul class="mt-6 space-y-4 text-sm">
+          <li>
+            <a data-wa href="#" target="_blank" rel="noopener" class="font-semibold text-white transition-colors hover:text-prime">(69) 99302-0404</a>
+            <span class="ml-2 text-[10px] uppercase tracking-[.14em] text-white/30">WhatsApp</span>
+          </li>
+          <li class="leading-relaxed text-white/45">
+            Av. 25 de Agosto, 3750 — Centenário<br>
+            Rolim de Moura — RO · CEP 76940-000
+          </li>
+          <li class="leading-relaxed text-white/45">
+            Seg a Sex 07:30–18:00 · Sáb 07:30–12:00<br>
+            <span class="text-white/25">Domingo fechado</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/[.08] pt-8 sm:flex-row sm:items-center">
+      <p class="text-[11px] tracking-wide text-white/30">
+        © <span id="year">2026</span> Prime Veículos. Todos os direitos reservados.
+      </p>
+      <p class="text-[11px] tracking-wide text-white/25">
+        Imagens meramente ilustrativas · Valores sujeitos a alteração sem aviso prévio
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Ações flutuantes -->
+<div class="fixed bottom-6 right-6 z-40 flex flex-col items-center gap-3">
+  <button id="toTop" aria-label="Voltar ao topo"
+    class="grid h-11 w-11 translate-y-6 place-items-center border border-white/15 bg-ink/80 text-white/60 opacity-0 backdrop-blur-md transition-all duration-700 hover:border-white/40 hover:text-white"
+    style="transition-timing-function:var(--ease)">↑</button>
+
+  <a data-wa href="#" target="_blank" rel="noopener" id="floatWa" aria-label="Falar no WhatsApp"
+     class="grid h-14 w-14 translate-y-24 place-items-center rounded-full bg-prime text-white opacity-0 shadow-2xl shadow-black/50 transition-all duration-700 hover:scale-105 hover:bg-primeLt"
+     style="transition-timing-function:var(--ease)">
+    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.38-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.58-.35M12.05 21.8h-.02c-1.75 0-3.47-.47-4.97-1.36l-.36-.21-3.7.97.99-3.61-.23-.37a9.79 9.79 0 0 1-1.5-5.23c0-5.42 4.42-9.83 9.85-9.83 2.63 0 5.1 1.03 6.96 2.89a9.76 9.76 0 0 1 2.88 6.95c0 5.42-4.42 9.83-9.9 9.83M20.5 3.49A11.72 11.72 0 0 0 12.05 0C5.55 0 .26 5.28.26 11.76c0 2.07.54 4.09 1.57 5.87L.16 24l6.53-1.71a11.8 11.8 0 0 0 5.36 1.36h.01c6.5 0 11.79-5.28 11.79-11.76 0-3.14-1.23-6.1-3.45-8.32"/></svg>
+  </a>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" hidden class="fixed inset-0 z-[9997] flex items-center justify-center bg-ink/95 p-4 backdrop-blur-xl sm:p-10">
+  <button id="lbClose" aria-label="Fechar" class="absolute right-5 top-5 grid h-12 w-12 place-items-center border border-white/15 text-xl text-white/70 transition-colors hover:border-white/40 hover:text-white">✕</button>
+  <button id="lbPrev" aria-label="Anterior" class="absolute left-3 grid h-12 w-12 place-items-center text-2xl text-white/50 transition-colors hover:text-white sm:left-8">←</button>
+  <button id="lbNext" aria-label="Próxima" class="absolute right-3 grid h-12 w-12 place-items-center text-2xl text-white/50 transition-colors hover:text-white sm:right-8">→</button>
+  <figure class="max-h-full max-w-5xl">
+    <img id="lbImg" src="" alt="" class="max-h-[78vh] w-auto object-contain">
+    <figcaption id="lbCap" class="mt-5 text-center text-[11px] uppercase tracking-[.18em] text-white/45"></figcaption>
+  </figure>
+</div>
+
+
+<!-- ══ Dados estruturados para o Google (SEO local) ══════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "name": "Prime Veículos",
+  "image": "assets/img/loja-aerea.jpg",
+  "logo": "assets/img/logo-prime.png",
+  "description": "Compra, venda e troca de veículos com procedência em Rolim de Moura, Rondônia.",
+  "telephone": "+5569993020404",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. 25 de Agosto, 3750",
+    "addressLocality": "Rolim de Moura",
+    "addressRegion": "RO",
+    "postalCode": "76940-000",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:30", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:30", "closes": "12:00" }
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Rolim de Moura" }
+  ]
+}
+</script>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════════════════════════════ -->
+<script>
+(() => {
+  'use strict';
+
+  const $  = (s, ctx = document) => ctx.querySelector(s);
+  const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
+  const reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ══════════════════════════════════════════════════════════════════════
+     CONFIGURAÇÃO — é aqui que você mexe no dia a dia
+  ══════════════════════════════════════════════════════════════════════ */
+
+  const WHATSAPP = {
+    numero:   '5569993020404',   // 55 (Brasil) + 69 (DDD) + 99302-0404
+    mensagem: 'Olá, Prime Veículos! Vim pelo site e gostaria de falar sobre os veículos disponíveis.'
+  };
+
+  // ─── HORÁRIO DE FUNCIONAMENTO ───────────────────────────────────────────
+  // [abertura, fechamento] em minutos desde 00:00 · null = fechado
+  const GRADE = {
+    0: { rotulo:'Domingo',              faixa:null       },
+    1: { rotulo:'Segunda a Sexta-feira', faixa:[450,1080] },  // 07:30 → 18:00
+    2: { rotulo:'Terça',                faixa:[450,1080] },
+    3: { rotulo:'Quarta',               faixa:[450,1080] },
+    4: { rotulo:'Quinta',               faixa:[450,1080] },
+    5: { rotulo:'Sexta',                faixa:[450,1080] },
+    6: { rotulo:'Sábado',               faixa:[450,720]  },   // 07:30 → 12:00
+  };
+  // Linhas exibidas na tabela (agrupadas)
+  const LINHAS_HORARIO = [
+    { rotulo:'Segunda a Sexta-feira', valor:'07:30 — 18:00', aberto:true  },
+    { rotulo:'Sábado',                valor:'07:30 — 12:00', aberto:true  },
+    { rotulo:'Domingo',               valor:'Fechado',       aberto:false },
+  ];
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     1 · LINKS DO WHATSAPP
+  ══════════════════════════════════════════════════════════════════════ */
+  const linkWa = texto =>
+    `https://wa.me/${WHATSAPP.numero}?text=${encodeURIComponent(texto)}`;
+
+  $$('[data-wa]').forEach(el => { el.href = linkWa(WHATSAPP.mensagem); });
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     2 · PRELOADER
+  ══════════════════════════════════════════════════════════════════════ */
+  (() => {
+    const pre = $('#preloader'), bar = $('#preBar'), num = $('#preNum');
+
+    const DURACAO = 2500;   // ← tempo total da barra, em milissegundos
+    let pronto = false;
+
+    const encerrar = () => {
+      if (pronto) return;
+      pronto = true;
+      bar.style.width = '100%';
+      num.textContent = '100%';
+      setTimeout(() => {
+        pre.classList.add('done');
+        document.body.style.overflow = '';
+        // dispara as animações da primeira dobra
+        $$('#top [data-reveal], #top [data-split]').forEach(el => el.classList.add('is-in'));
+      }, 260);
+    };
+
+    document.body.style.overflow = 'hidden';
+
+    // Avanço linear quadro a quadro: a barra e a porcentagem sobem juntas,
+    // no mesmo ritmo, do 0% ao 100% — sem saltos.
+    const inicio = performance.now();
+    const passo = agora => {
+      const p = Math.min((agora - inicio) / DURACAO, 1);
+      bar.style.width  = (p * 100).toFixed(2) + '%';
+      num.textContent  = Math.round(p * 100) + '%';
+      if (p < 1) requestAnimationFrame(passo);
+      else encerrar();
+    };
+    requestAnimationFrame(passo);
+
+    if (reduzido) encerrar();   // acessibilidade: sem espera
+  })();
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     3 · FAIXA DE FOTOS (rolagem contínua)
+  ══════════════════════════════════════════════════════════════════════ */
+  (() => {
+    const trilho = $('#faixaTrilho');
+    if (!trilho) return;
+
+    const VELOCIDADE = 42;   // ← pixels por segundo. Menor = mais devagar.
+
+    const originais = $$('.foto', trilho);
+    if (!originais.length) return;
+
+    const copiar = el => {
+      const c = el.cloneNode(true);
+      c.setAttribute('aria-hidden', 'true');   // cópia: fora do leitor de tela
+      c.dataset.copia = '1';
+      return c;
+    };
+
+    // 1) Repete as fotos até a fila cobrir a tela. Isso forma "uma volta".
+    let voltas = 1;
+    while (trilho.scrollWidth < innerWidth && voltas < 8) {
+      originais.forEach(el => trilho.appendChild(copiar(el)));
+      voltas++;
+    }
+
+    // 2) Duplica a volta inteira uma única vez. O trilho fica com duas metades
+    //    exatamente iguais — que é o que faz o -50% emendar sem salto.
+    [...trilho.children].forEach(el => trilho.appendChild(copiar(el)));
+
+    // A animação percorre metade do trilho, então a duração acompanha o tamanho
+    // para a velocidade na tela ficar sempre a mesma.
+    const ajustar = () => {
+      const metade = trilho.scrollWidth / 2;
+      trilho.style.setProperty('--dur', (metade / VELOCIDADE).toFixed(1) + 's');
+    };
+    ajustar();
+
+    let t = null;
+    addEventListener('resize', () => { clearTimeout(t); t = setTimeout(ajustar, 200); });
+  })();
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     4 · TABELA DE HORÁRIOS
+  ══════════════════════════════════════════════════════════════════════ */
+  (() => {
+    const dl = $('#gradeHorarios');
+    if (!dl) return;
+    dl.innerHTML = LINHAS_HORARIO.map(l => `
+      <div class="flex items-baseline justify-between gap-4 py-4">
+        <dt class="text-[15px] font-medium ${l.aberto ? 'text-white/80' : 'text-white/40'}">${l.rotulo}</dt>
+        <dd class="font-mono text-sm tracking-tight ${l.aberto ? 'text-white' : 'text-white/30'}">${l.valor}</dd>
+      </div>`).join('');
+  })();
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     5 · SELO "ABERTO AGORA" (fuso de Rondônia)
+  ══════════════════════════════════════════════════════════════════════ */
+  (() => {
+    const agora = () => {
+      const fmt = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Porto_Velho',
+        weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false
+      });
+      const p = Object.fromEntries(fmt.formatToParts(new Date()).map(x => [x.type, x.value]));
+      const dias = { Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6 };
+      return { dia: dias[p.weekday], minutos: Number(p.hour) * 60 + Number(p.minute) };
+    };
+
+    const hhmm = min => `${String(Math.floor(min / 60)).padStart(2,'0')}:${String(min % 60).padStart(2,'0')}`;
+    const NOMES = ['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+
+    const proximaAbertura = (dia, minutos) => {
+      for (let i = 0; i < 8; i++) {
+        const d = (dia + i) % 7;
+        const f = GRADE[d].faixa;
+        if (!f) continue;
+        if (i === 0 && minutos >= f[0]) continue;          // já passou da abertura de hoje
+        return i === 0 ? `Abre hoje às ${hhmm(f[0])}.`
+             : i === 1 ? `Abre amanhã às ${hhmm(f[0])}.`
+             : `Abre ${NOMES[d]} às ${hhmm(f[0])}.`;
+      }
+      return '';
+    };
+
+    const atualizar = () => {
+      const { dia, minutos } = agora();
+      const faixa  = GRADE[dia].faixa;
+      const aberto = Array.isArray(faixa) && minutos >= faixa[0] && minutos < faixa[1];
+
+      const pill = $('#statusPill'), dot = $('#statusDot'), txt = $('#statusText');
+      const top  = $('#statusPillTop'), prox = $('#proximaAbertura');
+      if (!pill) return;
+
+      txt.textContent = aberto ? 'Aberto agora' : 'Fechado agora';
+      if (top) top.textContent = aberto ? 'Aberto agora' : 'Fechado no momento';
+
+      dot.className  = 'h-1.5 w-1.5 rounded-full ' + (aberto ? 'bg-emerald-400' : 'bg-white/30');
+      pill.className = 'inline-flex items-center gap-2 border px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[.14em] '
+        + (aberto ? 'border-emerald-400/30 bg-emerald-400/[.08] text-emerald-300'
+                  : 'border-white/15 text-white/45');
+
+      if (prox) {
+        prox.textContent = aberto
+          ? `Fecha hoje às ${hhmm(faixa[1])}.`
+          : proximaAbertura(dia, minutos);
+      }
+    };
+
+    atualizar();
+    setInterval(atualizar, 60_000);
+  })();
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     6 · ANIMAÇÃO DOS TÍTULOS (palavra por palavra)
+  ══════════════════════════════════════════════════════════════════════ */
+  (() => {
+    const envolver = node => {
+      [...node.childNodes].forEach(filho => {
+        if (filho.nodeType === Node.TEXT_NODE) {
+          if (!filho.textContent.trim()) return;
+          const frag = document.createDocumentFragment();
+          filho.textContent.split(/(\s+)/).forEach(parte => {
+            if (!parte.trim()) { frag.appendChild(document.createTextNode(' ')); return; }
+            const fora = document.createElement('span');
+            fora.className = 'word';
+            const dentro = document.createElement('span');
+            dentro.className = 'word-i';
+            dentro.textContent = parte;
+            fora.appendChild(dentro);
+            frag.appendChild(fora);
+          });
+          filho.replaceWith(frag);
+        } else if (filho.nodeType === Node.ELEMENT_NODE && !filho.classList.contains('word')) {
+          envolver(filho);
+        }
+      });
+    };
+
+    $$('[data-split]').forEach(titulo => {
+      envolver(titulo);
+      $$('.word-i', titulo).forEach((w, i) => w.style.setProperty('--wd', `${i * 55}ms`));
+    });
+  })();
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     7 · REVEAL AO ROLAR
+  ══════════════════════════════════════════════════════════════════════ */
+  const animaveis = $$('[data-reveal], [data-split]');
+
+  if ('IntersectionObserver' in window && !reduzido) {
+    const io = new IntersectionObserver((entradas, obs) => {
+      entradas.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    animaveis.forEach(el => io.observe(el));
+
+    // Rede de segurança: se por algum motivo o observer não disparar,
+    // mostra tudo que já está na tela depois de 4s.
+    setTimeout(() => {
+      animaveis.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('is-in');
+      });
+    }, 4000);
+  } else {
+    // Navegador antigo ou movimento reduzido: sem animação, tudo visível.
+    animaveis.forEach(el => el.classList.add('is-in'));
+  }
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     8 · SCROLL: header, progresso, parallax, botões flutuantes
+  ══════════════════════════════════════════════════════════════════════ */
+  (() => {
+    const nav      = $('#nav');
+    const navInner = $('#navInner');
+    const floatWa  = $('#floatWa');
+    const toTop    = $('#toTop');
+    const barra    = $('#progress');
+    const video    = $('#heroVideo');
+    let ticking = false;
+
+    const aplicar = () => {
+      const y = window.scrollY;
+      const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
+
+      // Header
+      const preso = y > 40;
+      nav.classList.toggle('bg-ink/85', preso);
+      nav.classList.toggle('backdrop-blur-xl', preso);
+      nav.classList.toggle('border-b', preso);
+      nav.classList.toggle('border-white/[.08]', preso);
+      navInner.classList.toggle('py-3', preso);
+      navInner.classList.toggle('py-5', !preso);
+
+      // Progresso de leitura
+      barra.style.width = alturaTotal > 0 ? `${(y / alturaTotal) * 100}%` : '0%';
+
+      // Parallax do vídeo
+      if (video && !reduzido && y < window.innerHeight) {
+        video.style.transform = `translate3d(0, ${y * 0.22}px, 0)`;
+      }
+
+      // Botões flutuantes
+      const mostra = y > window.innerHeight * 0.6;
+      [floatWa, toTop].forEach(el => {
+        el.classList.toggle('opacity-0', !mostra);
+        el.classList.toggle('pointer-events-none', !mostra);
+      });
+      floatWa.classList.toggle('translate-y-24', !mostra);
+      toTop.classList.toggle('translate-y-6', !mostra);
+
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(aplicar); ticking = true; }
+    }, { passive: true });
+
+    window.addEventListener('resize', aplicar, { passive: true });
+    aplicar();
+
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduzido ? 'auto' : 'smooth' }));
+  })();
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     9 · MENU ATIVO CONFORME A SEÇÃO (scroll spy)
+  ══════════════════════════════════════════════════════════════════════ */
+  (() => {
+    const links = $$('[data-nav]');
+    const secoes = links.map(l => $(l.getAttribute('href'))).filter(Boolean);
+    if (!secoes.length) return;
+
+    const spy = new IntersectionObserver(entradas => {
+      entradas.forEach(e => {
+        if (!e.isIntersecting) return;
+        links.forEach(l => l.removeAttribute('data-active'));
+        const ativo = links.find(l => l.getAttribute('href') === `#${e.target.id}`);
+        if (ativo) ativo.setAttribute('data-active', '');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+
+    secoes.forEach(s => spy.observe(s));
+  })();
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     10 · MENU MOBILE
+  ══════════════════════════════════════════════════════════════════════ */
+  (() => {
+    const btn   = $('#menuBtn');
+    const panel = $('#menuPanel');
+    const bars  = $$('[data-bar]', btn);
+    let aberto = false;
+
+    const set = estado => {
+      aberto = estado;
+      btn.setAttribute('aria-expanded', String(aberto));
+      btn.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+      panel.classList.toggle('translate-y-[-100%]', !aberto);
+      panel.classList.toggle('pointer-events-none', !aberto);
+      document.body.style.overflow = aberto ? 'hidden' : '';
+      bars[0].classList.toggle('translate-y-[3px]', aberto);
+      bars[0].classList.toggle('rotate-45', aberto);
+      bars[1].classList.toggle('-translate-y-[3px]', aberto);
+      bars[1].classList.toggle('-rotate-45', aberto);
+    };
+
+    btn.addEventListener('click', () => set(!aberto));
+    $$('[data-mlink]', panel).forEach(a => a.addEventListener('click', () => set(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && aberto) set(false); });
+  })();
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     11 · LIGHTBOX DA GALERIA
+  ══════════════════════════════════════════════════════════════════════ */
+  (() => {
+    const lb    = $('#lightbox');
+    const img   = $('#lbImg');
+    const cap   = $('#lbCap');
+    const clicaveis = $$('[data-lightbox]');
+    if (!clicaveis.length) return;
+
+    // A faixa de fotos repete as imagens para o loop. Aqui só interessa a lista
+    // sem repetição — senão as setas ficariam passando pela mesma foto de novo.
+    const itens = clicaveis.filter(
+      (el, i) => clicaveis.findIndex(o => o.dataset.lightbox === el.dataset.lightbox) === i
+    );
+
+    let atual = 0;
+
+    const mostrar = i => {
+      atual = (i + itens.length) % itens.length;
+      const alvo = itens[atual];
+      img.src = alvo.dataset.lightbox;
+      img.alt = alvo.dataset.legenda || '';
+      cap.textContent = alvo.dataset.legenda || '';
+    };
+
+    const abrir = i => {
+      mostrar(i);
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+      $('#lbClose').focus();
+    };
+
+    const fechar = () => {
+      lb.hidden = true;
+      document.body.style.overflow = '';
+    };
+
+    // Toda foto visível é clicável — inclusive as cópias —, mas cada uma abre
+    // na posição da sua foto original dentro da lista sem repetição.
+    clicaveis.forEach(el => {
+      const i = itens.findIndex(o => o.dataset.lightbox === el.dataset.lightbox);
+      if (!el.dataset.copia) {
+        el.setAttribute('role', 'button');
+        el.setAttribute('tabindex', '0');
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(i); } });
+      }
+      el.addEventListener('click', () => abrir(i));
+    });
+
+    $('#lbClose').addEventListener('click', fechar);
+    $('#lbPrev').addEventListener('click', () => mostrar(atual - 1));
+    $('#lbNext').addEventListener('click', () => mostrar(atual + 1));
+    lb.addEventListener('click', e => { if (e.target === lb) fechar(); });
+
+    document.addEventListener('keydown', e => {
+      if (lb.hidden) return;
+      if (e.key === 'Escape')     fechar();
+      if (e.key === 'ArrowLeft')  mostrar(atual - 1);
+      if (e.key === 'ArrowRight') mostrar(atual + 1);
+    });
+  })();
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     12 · FORMULÁRIO DE AVALIAÇÃO → WHATSAPP
+  ══════════════════════════════════════════════════════════════════════ */
+  (() => {
+    const form = $('#formAvaliacao');
+    if (!form) return;
+    const erro = $('#erroForm');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(form).entries());
+
+      const faltando = ['nome', 'modelo', 'ano'].filter(k => !String(d[k] || '').trim());
+      if (faltando.length) {
+        erro.classList.remove('hidden');
+        const campo = form.querySelector(`[name="${faltando[0]}"]`);
+        campo.focus();
+        campo.style.borderColor = '#E11B22';
+        return;
+      }
+      erro.classList.add('hidden');
+
+      const linhas = [
+        `Olá, Prime Veículos! Gostaria de uma avaliação do meu veículo.`,
+        ``,
+        `*Nome:* ${d.nome}`,
+        `*Veículo:* ${d.modelo}`,
+        `*Ano:* ${d.ano}`,
+        d.km  ? `*KM:* ${d.km}`   : null,
+        `*Intenção:* ${d.intencao}`,
+        d.obs ? `*Observações:* ${d.obs}` : null,
+        ``,
+        `(enviado pelo site)`
+      ].filter(l => l !== null);
+
+      window.open(linkWa(linhas.join('\n')), '_blank', 'noopener');
+    });
+
+    form.querySelectorAll('.campo').forEach(c => {
+      c.addEventListener('input', () => { c.style.borderColor = ''; });
+    });
+  })();
+
+
+  /* ══════════════════════════════════════════════════════════════════════
+     13 · MISCELÂNEA
+  ══════════════════════════════════════════════════════════════════════ */
+  $('#year').textContent = new Date().getFullYear();
+
+  // Autoplay do vídeo em navegadores restritivos
+  const video = $('#heroVideo');
+  if (video) {
+    const tocar = () => video.play().catch(() => {});
+    video.addEventListener('loadeddata', tocar);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) tocar(); });
+    tocar();
+  }
+})();
+</script>
+</body>
+</html>
+
+
